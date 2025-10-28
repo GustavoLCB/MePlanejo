@@ -1,0 +1,65 @@
+.custom-navbar{
+ background-image: url('imagemdegradee.png'); /* substitua pelo nome correto */
+ /*background-color: #6889A6;*/
+ background-size: cover; /* cobre toda a área */
+ background-position: center; /* centraliza a imagem */
+ background-repeat: no-repeat; 
+ }
+
+.nav-item {
+  margin-left: 20px; /* aumenta o espaço à esquerda de cada item */
+}
+#custom-bg{
+  background-color: #031226
+}
+
+#custom-gradiente{
+background: linear-gradient(to right, #031622, #6889A6)
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link,
+.custom-navbar {
+  color: #C4DDF2 !important; /* amarelo brilhante */
+ }
+
+/*AQUI ESTOU ALTERANDO A COR DA FONTE DENTRO DO DROPDOWN DA NAVBAR PARA CONSTRATAR COM O FUNDO DO SITE*/ 
+.dropdown-item{
+  color: #031226;
+}
+
+.custom-navbar .navbar-brand:hover,
+.custom-navbar .nav-link:hover,
+.custom-navbar .dropdown-item:hover {
+  color: #031226 !important;
+  background-color: #6889A6
+}
+/*AQUI EU MEXO NO BOTÃO LOGIN/SIGNUP DA NAV BAR*/
+.custom-navbar .btn {
+  border-color: #C4DDF2 !important;
+  color: #C4DDF2 !important;
+}
+
+.custom-navbar .btn:hover {
+  background-color: #C4DDF2 !important;
+  color: #031226 !important;
+}
+
+.custom-navbar .dropdown-menu {
+  background-color: #C4DDF2; /* mesmo tom do fundo */
+  /*border: none; /* remove borda */
+}
+
+.navbar {
+    font-family: 'Verdana', sans-serif; /* Fonte sóbria */
+    font-weight: 400; /* Normal */
+    font-size: 16px; /* Ajuste conforme necessário */
+}
+
+.cards-section {
+    margin-top: 50px; /* espaço entre navbar e cards */
+}
+
+.icon-grande{
+  font-size: 1.5rem;
+}

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Planejo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"><!-- inserir esse link também, para usar os ícones do bootstrap-->
+
+
+</head>
+<body class="" id="custom-bg">
+    <header>
+        <nav class="navbar navbar-expand-lg custom-navbar navbar-nav" id="custom-gradiente"> <!-- bg-body-tertiary  o bg mudar a cor do background da navbar, vamos colocar o fundo mais próximo do azul -->
+            <div class="container-fluid mx-5">
+              <a class="navbar-brand" href="#"><img src="logomeplanejo8.png" alt="Logo Me Planejo" style="width: 80px; height: auto;"></a>
+
+              <!--<a style="font-family: Verdana, serif;" class="navbar-brand fs-1 fw-bold" href="#">Me Planejo</a>-->
+              <!-- aqui mudo para o nom do site, neste caso, Me Planejo e inserir antes do href, text-light para a cor do texto ficar branca (Danger, fica vermelho)-->
+              <!--<img src="logo_meplanjo.png" alt="logo_meplanejo" style="width: 15%;"></a>-->
+              <!-- para mudar o tamanho da fonte eu uso o fs (fontsize) ex: fs-1 / fw-bold deixa a fonte em negrito-->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><!-- aqui é para o caso do menu sandwich-->
+                <span class="bi-wallet2 text-light"></span><!-- ir em ICON no bootstrap e buscar pela imagem que se deseja e copiar e colar aqui, neste caso é o bi-wallet2 e para deixar branco, usar tbm o text-light-->
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active text-light" aria-current="page" href="https://www.bcb.gov.br/" target="_blank">Banco Central</a><!-- se deixar a # ele procura dentro da pasta, se tirar o # é necessário colocar o endereço completo-->
+                  <!--se inserir o comando target="_blank" abre uma nova página, sem fechar o seu site atual-->
+                </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link active text-light" aria-current="page" href="https://www.b3.com.br/pt_br/" target="_blank">B3</a><!-- se deixar a # ele procura dentro da pasta, se tirar o # é necessário colocar o endereço completo-->
+                  <!--se inserir o comando target="_blank" abre uma nova página, sem fechar o seu site atual-->
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Produtos</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Investimentos
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Ações</a></li>
+                      <li><a class="dropdown-item" href="#">CDB</a></li>
+                       <li><a class="dropdown-item" href="#">CRA / CRI</a></li>
+                       <li><a class="dropdown-item" href="#">Debêntures</a></li>
+                       <li><a class="dropdown-item" href="#">ETF</a></li>
+                      <li><a class="dropdown-item" href="#">Fundos de Investimento</a></li>
+                      <li><a class="dropdown-item" href="#">Fundos Imobiliários</a></li>
+                      <li><a class="dropdown-item" href="#">LCA / LCI</a></li>
+                      <li><a class="dropdown-item" href="#">Tesouro Direto</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Renda Fixa</a></li>
+                      <li><a class="dropdown-item" href="#">Renda Variável</a></li>
+                      <li><a class="dropdown-item" href="#">FGC</a></li>
+                      <li><a class="dropdown-item" href="#">Imposto de Renda</a></li>
+                      <li><a class="dropdown-item" href="#">Indexadores</a></li>
+                      <li><a class="dropdown-item" href="#">Índice de Basiléia</a></li>
+                      <li><a class="dropdown-item" href="#">Índice de Sharpe</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" aria-disabled="true" data-bs-toggle="modal" data-bs-target="#modalhistoria">História</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" aria-disabled="true" data-bs-toggle="modal">Contato</a>
+                  </li>
+                </ul>
+
+                <!--<form class="d-flex" role="search">
+                  <input class="form-control mx-2" type="search" placeholder="Search" aria-label="Search"/>
+                  <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>-->
+                  <!-- Botão Login/Sign Up -->
+                   <!--class="btn btn-outline-dark text-dark bg-light mx-2" -->
+                  <button class="btn btn-outline-light mx-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#loginOffcanvas" aria-controls="loginOffcanvas">
+                   Login/SignUp
+                  </button>
+
+            
+            </div>
+            </div>
+<div class="modal fade" id="modalhistoria" tabindex="-1" aria-labelledby="modalhistoriaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #c4ddf2; color: #031226;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modalhistoriaLabel">História</h5>
+        <a data-bs-dismiss="modal" aria-label="Fechar"><span class="bi-coin text-dark icon-grande" ></span></a>
+        <!--<button type="button" class="bi-coin text-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>-->
+      </div>
+      <div class="modal-body">
+        <p><strong>Como tudo começou?</strong></p>
+         <p>Me chamo Gustavo Lopes, sou formado em Estatísca pela Escola Nacional de Ciências Estatísticas – E.N.C.E/I.B.G.E. e sempre gostei de finanças e deste Mercado que é viciante e que te dá muitas oportunidades. Ao longo de muito anos, tenho trabalhado investindo os recursos da minha família, sempre tendo como pilar, um objetivo de aumento de patrimônio, sem fazer loucura com o dinheiro. E ao longo destes anos, muitos amigos, familiares de amigos, colegas e até mesmo amigo de amigos, acabavam me perguntando a respeito dos produtos do Mercado Financeiro, seus funcionamentos, dúvidas sobre imposto de renda ou até mesmo como fazer uma operação de compra de algum produto específico. Como sou apaixonado pelo tema e adoro explicar, sempre me coloquei a disposição.</p> 
+         <p>Contudo, sempre me diziam que minha didática era muito boa e que eu deveria fazer melhor, explicar para todos, já que as dúvidas se repetiam a cada novo encontro e novas conversas.</p>
+        <p>Depois do alguns anos, resolvi fazer do meu passatempo / hobby uma forma de ajudar mais pessoas de fato e, então a ideia de criar um canal, começou a ser mais real. Como a maioria dos questionamentos, acabavam sendo explicações que levavam ao amigo/familiar, de certa forma, uma forma de se planejar para o futuro e por que não dizer, para a vida, o nome que me veio a mente não poderia ser outro a não ser “ME PLANEJO”. Nesse período, acabei aplicando para a ANCORD, obtendo êxito e hoje, como assessor, posso ajudar as pessoas a investir de forma correta, com ética acima de tudo.</p>
+        <p>___________________________________________________________</p>
+          <p><strong>Ditado 1: O Dinheiro não aceita “desaforo”</strong></p>
+          <p>É isso mesmo que você acabou de ler. O dinheiro não aceita desaforo e se você não cuidar bem dele, com certeza, quando mais você precisar dele, no futuro, ele não estará lá para te ajudar. 
+          Imagine que você quer ter um final de vida, após trabalhar décadas, tranquila. Você que viajar, frequentar bons lugares, aproveitar a vida. Mas também tem suas obrigações ... pagar seu plano de saúde, as contas da sua casa, comprar suas roupas etc., não é isso? Assim como você cuida da sua saúde, fazendo exames periódicos, corrigindo hábitos não muito bons, você deve fazer o mesmo com seu dinheiro. Deve cuidar dele, tal qual cuida de uma planta, regando frequentemente, para que ela cresça e fique saudável. Com o seu dinheiro, o conceito é o mesmo ... deve cuidar para que seu patrimônio aumente a cada mês ou mesmo a cada semana. Em resumo, cuide do seu dinheiro, dê atenção a ele ... ter dinheiro é bom!.</p>
+          <p>__________________________________________________________</p>
+          <p><strong>Ditado 2: Quem planeja tem futuro, quem não planeja tem destino (“Mario Nassar”)</strong></p>
+          <p>Bem, aqui não é preciso dizer muita coisa, pois o próprio ditado já fala por si mesmo. Você é a punica pessoa que pode decidir isso. Eu resolvi ajudar, ao produzir esse site e os vídeos que você já assistiu ou assistirá. Espero que goste deles e que sirva para se educar. Lembre-se da fábula da formiga e a cigarra, onde enquanto uma trabalha, para ter o futuro confortável e quentinho, a outra aproveita como se não houvesse o amanhã. Mas o amanhã sempre chega. E você quer estar preparado para ele?</p>
+          <p>__________________________________________________________</p>
+          <p>Contato:
+          Se quiser tirar mais dúvidas ou ter uma assessoria com ética e respeito, entre em contato comigo através do meu e-mail: gus.lopescb@gmail.com</p>
+          <br>
+        
+      </div>
+    </div>
+
+          </nav>
+          <hr style="border: 1px solid #F6E34D; margin: 0;">
+    </header>
+    
+        <!--<h1 class="text-center my-4">Clique em cada conteúdo para aprender mais</h1>-->
+        <div class="container cards-section custom-bg">
+         <div class="row g-4">
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="acoes4.png" class="card-img-top" alt="Ações">
+                    <div class="card-body" id="custom-bg">
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#modalAcoes">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+           
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="cdb4.png" class="card-img-top" alt="CDB">
+                    <div class="card-body" id="custom-bg">
+                      <!--<h5 class="card-title">CDB</h5>-->
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#modalcdb">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="cra_cri4.png" class="card-img-top" alt="CRA / CRI">
+                    <div class="card-body" id="custom-bg">
+                      <!--<h5 class="card-title">Fundos de Investimento</h5>-->
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#modalcracri">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="debentures4.png" class="card-img-top" alt="Debêntures">
+                    <div class="card-body" id="custom-bg">
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#modaldeb">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="etf4.png" class="card-img-top" alt="ETF">
+                    <div class="card-body" id="custom-bg">
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#modaletf">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+
+             <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="fundosdeinvestimento4.png" class="card-img-top" alt="Fundos de Investimento">
+                    <div class="card-body" id="custom-bg">
+                      <!--<h5 class="card-title">Fundos de Investimento</h5>-->
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#modalfundoinvest">
+                        Aprenda mais aqui!
+                      </button>
+                  </div>
+            </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="fundosimobiliarios4.png" class="card-img-top" alt="Fundos imobiliários">
+                    <div class="card-body" id="custom-bg">
+                      <!--<h5 class="card-title">Fundos de Investimento</h5>-->
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#modalfii">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="lca_lci4.png" class="card-img-top" alt="LCA / LCI">
+                    <div class="card-body" id="custom-bg">
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#modallcalci">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="tesourodireto4.png" class="card-img-top" alt="Tesouro Direto">
+                    <div class="card-body" id="custom-bg">
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#modaltd">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+<br>
+<br>
+
+<hr style="border: 1px solid #F6E34D; margin: 10;">
+
+             <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="indexadores4.png" class="card-img-top" alt="Indexadores">
+                    <div class="card-body" id="custom-bg">
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#avisoyt">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+
+             <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="impostorenda.png" class="card-img-top" alt="Imposto de renda">
+                    <div class="card-body" id="custom-bg">
+                      <!--<h5 class="card-title">Produtos de Investimento</h5>-->
+                      <!--<p class="card-text">R$ 999,00</p>-->
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#avisoyt">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="fgc4.png" class="card-img-top" alt="FGC">
+                    <div class="card-body" id="custom-bg">
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#avisoyt">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="basileia4.png" class="card-img-top" alt="Indice de Basileia">
+                    <div class="card-body" id="custom-bg">
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#avisoyt">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="share4.png" class="card-img-top" alt="Indice de Sharpe">
+                    <div class="card-body" id="custom-bg">
+                      <button type="button" class="btn btn-primary d-block mx-auto" data-bs-toggle="modal" data-bs-target="#modalsharpe">
+                        Aprenda mais aqui!
+                      </button>
+                    </div>
+                  </div>
+            </div>
+         </div>   
+        </div>
+    </div> 
+<br>
+
+<hr style="border: 1px solid #F6E34D; margin: 0;">
+
+    <footer id="custom-gradiente">
+      <p class="text-center" style="color: #F6E34D">DÚVIDAS</p>
+    <div class="accordion mx-5 my-4" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Atenção
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">O conteúdo deste site tem caráter meramente educacional e não deve ser considerado como indicação de investimento, sob hipótese alguma.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Sobre nós
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Este site foi criado com o objetivo de disseminar conhecimentos sobre investimentos para pessoas interessadas no mercado financeiro. <br> As informações aqui contidas visam a esclarecer dúvidas corriqueiras, que normalmente surjem em rodas de conversa entre amigos. </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Fale conosco
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Ficou com alguma dúvida? Quer reportar algum problema? Entre em contato através do e-mail: gus.lopescb@gmail.com
+          </div>
+        </div>
+      </div>
+    </div>
+  <br>
+  <br>
+  </footer>
+
+      <!-- Offcanvas Login -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="loginOffcanvas" aria-labelledby="loginOffcanvasLabel">
+      <div class="offcanvas-header text-light" id="custom-bg">
+          <h5 class="offcanvas-title" id="loginOffcanvasLabel">LOGIN</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+          <!-- Form de Login -->
+          <form>
+              <div class="mb-3">
+                  <label for="emailInput" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="emailInput" placeholder="Digite seu email">
+              </div>
+              <div class="mb-3">
+                  <label for="passwordInput" class="form-label">Senha</label>
+                  <input type="password" class="form-control" id="passwordInput" placeholder="Digite sua senha">
+              </div>
+              <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
+          </form>
+          <hr>
+          <p>Não possui uma conta?</p>
+          <a class="text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#cadastro" aria-controls="loginOffcanvas">
+              Cadastre-se agora
+          </a>
+      </div>
+  </div>
+  <!-- Offcanvas Cadastro -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cadastro" aria-labelledby="loginOffcanvasLabel">
+      <div class="offcanvas-header id=custom-bg text-light">
+          <h5 class="offcanvas-title" id="loginOffcanvasLabel">SIGN UP</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+          <!-- Form de Cadastro -->
+          <form>
+              <div class="mb-3">
+                  <label for="nameInput" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="nameInput" placeholder="Digite seu nome">
+              </div>
+              <div class="mb-3">
+                  <label for="emailRegInput" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="emailRegInput" placeholder="Digite seu email">
+              </div>
+              <div class="mb-3">
+                  <label for="passwordRegInput" class="form-label">Senha</label>
+                  <input type="password" class="form-control" id="passwordRegInput" placeholder="Digite sua senha">
+              </div>
+              <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+          </form>
+      </div>
+  </div>
+  <!-- Modal -->
+<div class="modal fade" id="avisoyt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" >Direcionamento!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Você será direcionado para o Youtube</p>
+      </div>
+      <!--<div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalAcoes" tabindex="-1" aria-labelledby="modalAcoesLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #c4ddf2; color: #031226;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modalAcoesLabel">Ações</h5>
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Ações: Virando Sócio das Maiores Empresas do País:</strong></p>
+        <p>Se a Renda Fixa é como emprestar dinheiro, a Renda Variável – e, em particular, as ações – é sobre comprar um pedacinho de uma empresa e virar sócio.</p>
+        <p><strong>O Que São Ações? (A Ideia Central: Ser Sócio)</strong></p>
+        <p>Uma Ação é a menor fração do capital social de uma empresa de capital aberto (ou seja, que negocia suas ações na Bolsa de Valores).</p>
+        <br>
+        <p>Quer aprender mais sobre AÇÕES? Confira nossos vídeos e aprenda como investir com segurança!</p>
+        <button><a href="https://www.youtube.com/watch?v=JJI6etnrRws&t=445s" target="_blank">Saiba sobre AÇÕES no meu canal</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalcdb" tabindex="-1" aria-labelledby="modalcdbLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #c4ddf2; color: #031226;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modalcdbLabel">CDB</h5>
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>CDB - Certificado de Depósito Bancário: O Que é, e Conceito
+</strong></p>
+        <p>O Certificado de Depósito Bancário (CDB) é um dos principais produtos de investimento do mercado financeiro brasileiro. Ele tem como objetivo proporcionar aos investidores uma alternativa de aplicação segura e rentável, ao mesmo tempo que oferece aos bancos uma forma de captar recursos para suas atividades.</p>
+        <p><strong>O Que é o CDB?</strong></p>
+        <p>O CDB é um título de renda fixa emitido por bancos para captar dinheiro que será utilizado em suas operações de crédito, como empréstimos e financiamentos. Em troca do dinheiro investido, o banco paga ao investidor uma remuneração, que pode ser prefixada, pós-fixada ou híbrida (uma combinação de ambas).
+        Em termos simples, quando uma pessoa investe em CDB, ela está emprestando seu dinheiro ao banco, e este, em contrapartida, se compromete a devolver o valor investido acrescido de uma rentabilidade, que pode ser acordada no momento da aplicação.</p>
+        <br>
+        <p>Quer aprender mais sobre CDB? Confira nossos vídeos e aprenda como investir com segurança!</p>
+        <button><a href="https://www.youtube.com/watch?v=JJI6etnrRws&t=445s" target="_blank">Saiba sobre CDB no meu canal</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalcracri" tabindex="-1" aria-labelledby="modalcracriLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #c4ddf2; color: #031226;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modalcracriLabel">CRA / CRI</h5>
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Os <strong>CRAs</strong> e <strong>CRIs</strong> são os investimentos "irmãos" das Debêntures Incentivadas, com a mesma isenção de imposto, mas focados em setores diferentes.
+</p>
+<p>___________________________________________________________________________________________________________________</p>
+        <p><strong>CRAs e CRIs:</strong> Financiando o Futuro com Isenção de Imposto</p>
+        <p><strong>O Que São CRAs e CRIs? (A Ideia Central: Securitização)</strong></p>
+          CRA e CRI são títulos de Renda Fixa que representam um direito de crédito. Eles não são emitidos por bancos ou empresas que buscam dinheiro diretamente, mas sim por uma empresa intermediária chamada Securitizadora.</p>
+          <br>
+        <p>Quer aprender mais sobre CRAs e CRIs? Confira nossos vídeos e aprenda como investir com segurança!</p>
+        <button><a href="https://www.youtube.com/watch?v=JJI6etnrRws&t=445s" target="_blank">Saiba sobre CRAs e CRIs no meu canal</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modaldeb" tabindex="-1" aria-labelledby="modaldebLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #c4ddf2; color: #031226;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modaldebLabel">Debêntures</h5>
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Debêntures: Você Empresta para Empresas, Não para o Banco
+</strong></p>
+        <p>Para o público leigo, a melhor forma de entender o que são debêntures é através de uma analogia com o que eles já conhecem:</p>
+        <p><strong>O Que é uma Debênture? (O Empréstimo Simples)</strong></p>
+          <p>Uma debênture é, essencialmente, um título de dívida de Renda Fixa, mas que, ao invés de ser emitido por um banco (como um CDB) ou pelo Governo (como o Tesouro Direto), é emitido por uma empresa privada (como uma construtora, uma empresa de energia, ou uma gigante de telecomunicações).</p>
+          <p><strong>Analogia da Vaquinha da Empresa:</strong></p>
+          <p>Imagine que uma empresa grande (ex: uma concessionária de rodovias) precisa construir um novo trecho de estrada, mas não quer pedir um empréstimo caro ao banco. Ela decide fazer uma "vaquinha" no mercado, pedindo dinheiro diretamente aos investidores.</p>
+          <p>Ao comprar uma Debênture, você está participando dessa vaquinha. Você empresta seu dinheiro para a empresa, e ela te devolve esse valor no futuro, com o acréscimo de juros.</p>
+          <p><strong> •	Você é o Credor: Você se torna um credor da empresa, e não um sócio (como seria se comprasse ações).</strong></p>
+          <p><strong> •	A Rentabilidade: Geralmente é atrelada a um índice (como IPCA + uma taxa fixa ou CDI + uma taxa fixa).</strong></p>
+          <p><strong> •	O Risco: O risco principal é a empresa não conseguir te pagar (dar calote), pois debêntures não têm garantia do FGC. Por isso, a solidez da empresa emissora é crucial.</strong></p>
+          <br>
+          <p>___________________________________________________________________________________________________________________</p>
+           <p><strong>Debêntures Incentivadas: O Bônus do Governo</strong></p>
+          <p>As Debêntures Incentivadas são um tipo especial de debênture que surgiu no Brasil (Lei nº 12.431/2011) e têm um objetivo maior: financiar projetos de infraestrutura que são importantes para o país.</p>
+          <p><strong>Analogia do "Projeto Prioritário" e o Incentivo:</strong></p>
+          <p>A concessionária da rodovia do nosso exemplo decide que o novo trecho é um Projeto Prioritário de infraestrutura (como uma nova usina, um projeto de saneamento, ou uma rodovia).</p>
+          <p>Para que os investidores se sintam mais motivados a emprestar o dinheiro para esse projeto de longo prazo (e assim ajudar o país), o Governo oferece um super bônus:</p>
+          <p><strong>O Grande Diferencial:</strong> O rendimento (os juros) que você receber com essa debênture é ISENTO de Imposto de Renda para a Pessoa Física.</p>
+          <br>
+        <p>Quer aprender mais sobre Debêntures? Confira nossos vídeos e aprenda como investir com segurança!</p>
+        <button><a href="https://www.youtube.com/watch?v=JJI6etnrRws&t=445s" target="_blank">Saiba sobre DEBÊNTURES no meu canal</a></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="modaletf" tabindex="-1" aria-labelledby="modaletfLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #c4ddf2; color: #031226;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modaletfLabel">ETF</h5>
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Os ETFs (Exchange Traded Funds) são uma ferramenta excelente para o investidor leigo que quer ter acesso ao mercado de ações de forma simples e segura.
+          <p>___________________________________________________________________________________________________________________</p>
+</strong></p>
+        <p><strong>ETFs (Exchange Traded Funds): O Cesto de Frutas da Bolsa</strong></p>
+        <p>Imagine que, em vez de ser sócio de apenas uma empresa, você quer ser sócio das 50 maiores e melhores empresas do país ao mesmo tempo.</p>
+        <p>Comprar 50 ações diferentes seria caro e trabalhoso. É aí que entram os ETFs.</p>
+        <p><strong>O Que São ETFs? (A Ideia Central: Compra de Cesta)</strong></p>
+        <p>Um ETF é um tipo de fundo de investimento que tem uma característica muito simples: ele tem como objetivo copiar a performance de um índice financeiro.
+        O índice mais famoso é o Ibovespa, que reúne as ações mais negociadas da Bolsa brasileira.</p>
+        <p><strong>Analogia do Cesto de Frutas (Copiando o Mercado):</strong></p>
+        <p>Imagine que a Bolsa de Valores é uma Feira Gigante cheia de frutas. O índice Ibovespa é como a "Cesta Padrão" da feira: ela contém as 50 frutas mais populares e importantes do momento.</p>
+        <p>Comprar Ações (A compra individual):</p> 
+        <p>É como ir à feira e comprar 50 frutas diferentes, uma de cada vez.</p>
+          <p>Comprar um ETF: É como comprar a "Cesta Ibovespa" já pronta em uma única transação, pagando um preço só.</p>
+          <p>___________________________________________________________________________________________________________________</p>
+        <p>"O ETF é a melhor ferramenta para o investidor que diz: 'Quero investir em ações, mas não tenho tempo nem conhecimento para escolher empresas'. Com um ETF, você compra a média do mercado em uma única tacada. É a forma mais inteligente de participar da Renda Variável com risco diluído e baixo custo."</p>
+        <br>
+        <p>Quer aprender mais sobre ETFs? Confira nossos vídeos e aprenda como investir com segurança!</p>
+        <button><a href="https://www.youtube.com/watch?v=JJI6etnrRws&t=445s" target="_blank">Saiba sobre ETF no meu canal</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modalfundoinvest" tabindex="-1" aria-labelledby="modalfundoinvestLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #c4ddf2; color: #031226;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modalfundoinvestLabel">Fundos de Investimento</h5>
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Os Fundos de Investimento são a maneira mais comum e acessível para o investidor leigo começar, pois eles delegam a gestão.
+          <p>___________________________________________________________________________________________________________________</p> 
+</strong></p>
+        <p>Fundos de Investimento: Contratando um "Síndico" Financeiro</p>
+        <p><strong>O Que é um Fundo de Investimento? (A Ideia Central: O Condomínio)</strong></p>
+          <p>Um Fundo de Investimento é uma espécie de "Condomínio de Investidores".</p>
+          <p><strong>•	O Condomínio (O Fundo):</strong> Várias pessoas se juntam e colocam seu dinheiro em um mesmo pote. Esse dinheiro, somado, forma o Patrimônio do Fundo.</p>
+          <p><strong>•	O Condômino (O Cotista):</strong> Ao investir, você compra cotas desse fundo, tornando-se um dos donos proporcionais do patrimônio total.</p>
+          <p><strong>•	O Síndico (O Gestor):</strong> Todo Fundo tem um Gestor Profissional. Este é o especialista contratado que toma todas as decisões de investimento (o que comprar, o que vender e quando) em nome de todos os cotistas.</p>
+          <p>Em resumo, um Fundo é uma forma de delegar suas decisões de investimento a um profissional experiente.</p>
+          <p>___________________________________________________________________________________________________________________</p>
+          <p>
+          "Os Fundos de Investimento são a forma mais fácil de ter uma carteira diversificada e profissionalmente gerida. Você não precisa se preocupar em escolher o que comprar. A sua única missão é escolher o gestor certo (o 'síndico' ou 'chefe de cozinha') e o tipo de fundo que se alinha ao seu apetite por risco."</p>
+          <br>
+        <p>Quer aprender mais sobre o Mercado? Confira nossos vídeos e aprenda como investir com segurança!</p>
+        <button><a href="https://www.youtube.com/watch?v=JJI6etnrRws&t=445s" target="_blank">Saiba sobre Fundos de Investimento no meu canal</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalfii" tabindex="-1" aria-labelledby="modalfiiLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #c4ddf2; color: #031226;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modalfiiLabel">Fundos Imobiliários</h5>
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Fundos Imobiliários (FIIs): Sendo Dono de um "Tijolo Virtual"
+</strong></p>
+        <p>Um Fundo Imobiliário é, essencialmente, um condomínio de investidores que se junta para comprar grandes empreendimentos ou títulos ligados ao setor imobiliário.
+        O principal objetivo de um FII é gerar renda mensal isenta de IR (o "aluguel") para seus cotistas.</p>
+        <p><strong>Analogia do "Shopping Compartilhado" (O Conceito Básico):</strong></p>
+          Você se junta a milhares de pessoas para comprar um grande imóvel (um shopping, um prédio comercial ou um galpão), e o Fundo distribui a sua parte do aluguel mensalmente, sem que você precise se preocupar com inquilino, reforma ou IPTU.</p>
+          <p>___________________________________________________________________________________________________________________</p>
+          <p>"<strong>FIIs</strong> permitem que você seja dono de grandes ativos, como Galpões Logísticos, Shoppings, Lajes corporativas ou um portfólio de Dívidas de Papel, e receba uma renda mensal com isenção. É a forma de ter o benefício do imóvel com a facilidade de compra e venda da Bolsa."</p>
+          <br>
+        <p>Quer aprender mais sobre Fundos Imobiliários? Confira nossos vídeos e aprenda como investir com segurança!</p>
+        <button><a href="https://www.youtube.com/watch?v=JJI6etnrRws&t=445s" target="_blank">Saiba sobre Fundos Imobiliários no meu canal</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modallcalci" tabindex="-1" aria-labelledby="modallcalciLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #c4ddf2; color: #031226;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modallcalciLabel">LCA / LCI</h5>
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>As LCAs e LCIs são, sem dúvida, um dos investimentos de Renda Fixa mais queridos no Brasil por combinarem as melhores características dos ativos de crédito.
+          <p>___________________________________________________________________________________________________________________</p>
+</p>
+
+          <p><strong>O Que São LCAs e LCIs? (O Empréstimo ao Banco com Destino)</strong></p>
+          <p>Tanto a LCA (Letra de Crédito do Agronegócio) quanto a LCI (Letra de Crédito Imobiliário) são títulos de Renda Fixa emitidos por bancos ou instituições financeiras.</p>
+          <p><strong>Analogia da "Caixa com Rótulo":</strong></p>
+          <p>Quando você investe em um CDB, você empresta dinheiro para o banco usar como quiser.</p>
+          <p>Quando você investe em uma LCA ou LCI, é como se você entregasse o dinheiro ao banco em uma "caixa com um rótulo":</p>
+         <p><strong>•	Rótulo LCI:</strong> O banco só pode usar esse dinheiro para financiar o setor imobiliário (ex: dar crédito para construtoras, financiar a compra da casa própria).</p>
+         <p><strong>•	Rótulo LCA:</strong> O banco só pode usar esse dinheiro para financiar o agronegócio (ex: dar crédito a produtores rurais, financiar a compra de máquinas agrícolas).</p>
+         <p>Em troca desse empréstimo direcionado, o banco te paga uma remuneração (os juros).</p>
+         <p><strong>LCAs e LCIs: O Empréstimo Seguro e com Benefício Fiscal</strong></p>
+          <p>As Letras de Crédito (LCA e LCI) são os "primos" dos Certificados de Depósito Bancário (CDBs). Eles funcionam de forma idêntica a um CDB, mas têm dois superpoderes que os tornam atrativos.</p>
+          <p><strong>1: Isenção de Imposto de Renda</strong></p>
+          <p><strong>2: Proteção do FGC</strong></p>
+          <p>___________________________________________________________________________________________________________________</p>
+          <p><strong>"LCAs</strong> e <strong>LCIs</strong> são uma ótima combinação: você tem a segurança de ter a garantia do banco e do FGC, e ainda ganha o benefício fiscal da isenção do Imposto de Renda. Elas são ideais para quem busca segurança, um bom retorno líquido e quer investir em prazos de médio a longo prazo."</p>
+          <br>
+        <p>Quer aprender mais sobre o mercado da Renda Fixa? Confira nossos vídeos e aprenda como investir com segurança!</p>
+        <button><a href="https://www.youtube.com/watch?v=JJI6etnrRws&t=445s" target="_blank">Saiba sobre LCA e LCI no meu canal</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modaltd" tabindex="-1" aria-labelledby="modaltdLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #c4ddf2; color: #031226;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modaltdLabel">Tesouro Direto</h5>
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>O que é o Tesouro Direto?</strong></p>
+        <p>Imagine que o governo é como uma grande empresa que precisa de dinheiro para funcionar — pagar salários, construir escolas, hospitais, estradas, etc. Assim como as pessoas e empresas, o governo também pode pegar dinheiro emprestado.</p>
+        <p>Mas, em vez de pedir esse dinheiro a um banco, ele pede diretamente para as pessoas — e é aí que entra o Tesouro Direto.</p>
+        <p>O Tesouro Direto é um programa criado pelo governo brasileiro que permite que qualquer pessoa empreste dinheiro para o governo e, em troca, receba juros.</p>
+        <p>Ou seja: você vira o credor do governo — alguém que empresta e depois recebe de volta com rendimento.
+         
+        <p>___________________________________________________________________________________________________________________</p>  
+        </p>
+        <p><strong>Fazendo uma analogia simples</strong></p>
+        <p><strong>O Tesouro Direto: Você Emprestando Dinheiro para o "Dono da Casa"</strong></p>
+        <p>Imagine que o Governo Federal é o Dono de uma Casa muito grande e importante (o Brasil). Essa casa precisa de dinheiro para fazer reformas, pagar as contas, investir em estradas, hospitais, educação, etc.</p>
+        <p>Como o Governo não pode simplesmente imprimir dinheiro para tudo, ele faz o seguinte:</p>
+        <p><strong>O Tesouro Direto</strong> é a "loja virtual" onde o Governo vende títulos para pessoas comuns como você.</p>
+        <p>Na prática, quando você investe no Tesouro Direto, você está <strong>emprestando</strong> dinheiro para o Governo.</p>
+        <p>Em troca, o Governo emite um Título (que é como se fosse um "vale" ou um contrato) e promete te devolver o dinheiro que você emprestou, mais um valor extra (os juros), em uma data futura combinada.</p>
+        <p>Quer aprender mais sobre o mercado da Renda Fixa? Confira nossos vídeos e aprenda como investir com segurança!</p>
+        <button><a href="https://www.youtube.com/watch?v=JJI6etnrRws&t=445s" target="_blank">Saiba sobre Tesouro Direto no meu canal</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="modal fade" id="modalsharpe" tabindex="-1" aria-labelledby="modalsharpeLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #c4ddf2; color: #031226;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="modalsharpeLabel">Índice de Sharpe</h5>
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Olhar para a rentabilidade apenas, ao decidir se investe em um produto ou outro, é importante. Mas muitos se esquecem que com a rentabilidade, vem o risco atrelado. Então, uma pergunta que é bastante pertinente nessas horas, seria: “O retorno que estou tendo, vale o risco que estou correndo?”
+</p>
+        <p>Então, eu lhes “apresento”, o<strong> Índice de Sharpe !!!</strong></p>
+        <p><strong>O Índice de Sharpe: Não Olhe Apenas para o Retorno, Olhe para o Risco!</strong></p>
+          <p>Vamos fazer uma analogia, para um melhor entendimento ...imagine que você está em uma corrida. Você quer saber quem é o mais rápido, certo? Mas, e se você soubesse que um corredor trapaceou ou correu de forma perigosa?</p>
+          <p>O Índice de Sharpe faz exatamente isso no mundo dos investimentos: ele não olha apenas para quem rendeu mais, mas sim para quem rendeu mais de forma inteligente, considerando o risco que foi corrido.</p>
+          <p>___________________________________________________________________________________________________________________</p>
+          <p><strong>"Mas, o Que o Sharpe Realmente Mede? (A Ideia Central)"</strong></p>
+          <br>
+          <p>O Sharpe é um número que mede o "Retorno Ajustado ao Risco" de um investimento (fundo, carteira ou ativo).</p>
+         <p>Ele responde à pergunta:
+          "Para cada unidade de risco que eu corri, quanto de retorno extra eu ganhei em comparação com o investimento mais seguro do mercado (o 'livre de risco')?"</p>
+          <p>•	Retorno: Quanto o investimento rendeu (o quanto você ganhou).</p>
+          <p>•	Risco (Volatilidade): Medido pela volatilidade (o quanto o preço daquele investimento "sobe e desce" de forma brusca).</p>
+          <p>___________________________________________________________________________________________________________________</p>
+          <p><strong>Aplicação Prática: Comparando Investimentos</strong></p>
+          <p>A utilidade principal do Sharpe é comparar investimentos diferentes.</p>
+          <p>Regra Simples: Quanto MAIOR o Índice de Sharpe, MELHOR o investimento!</p>
+          <p>Um Sharpe maior significa que o investimento:
+          1.	Ou gerou um retorno excelente assumindo um risco baixo.
+          2.	Ou gerou um retorno muito bom, mas o risco foi ainda menor.</p>
+          <p>Ele mostra qual gestor ou qual estratégia foi mais eficiente na busca por lucros.</p>
+          <br>
+        <p>Quer aprender mais sobre Índice de Sharpe? Confira nossos vídeos e aprenda como investir com segurança!</p>
+        <button><a href="https://www.youtube.com/watch?v=JJI6etnrRws&t=445s" target="_blank">Saiba sobre Índice de Sharpe no meu canal</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        
+        <button><a href="https://www.youtube.com/watch?v=JJI6etnrRws&t=445s" target="_blank">Saiba sobre Índice de Sharpe no meu canal</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
